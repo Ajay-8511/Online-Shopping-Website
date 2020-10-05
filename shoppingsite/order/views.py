@@ -14,9 +14,9 @@ def order_buy(request, product_names):
     if product_na.product_quantity == 0:
         return redirect('/')
     else:
-        list = []
-        list.append(product_names)
-        request.session['product_lists'] = list
+        product_list = []
+        product_list.append(product_names)
+        request.session['product_lists'] = product_list
         request.session['product_qun'] = [1]
         print(list)
     return redirect('order:fill_process')
